@@ -1,32 +1,47 @@
-# Estudo de Caso 1 - DSA AI Coder - Criando Seu Assistente de Programação Python, em Python
+# Usando o JARVIS
 
-# Abra o terminal ou prompt de comando, navegue até a pasta com os arquivos e execute o comando abaixo para criar um ambiente virtual:
+## Index
 
-conda create --name dsaec1 python=3.13
+[Estudo de Caso 1 - DSA AI Coder - Criando Seu Assistente de Programação Python, em Python](#)
 
-# Ative o ambiente:
+## Estudo de Caso 1 - DSA AI Coder - Criando Seu Assistente de Programação Python, em Python
 
-conda activate dsaec1 (ou: source activate dsaec1)
+> Abra o terminal ou prompt de comando, navegue até a pasta com os arquivos e execute o comando abaixo para criar um ambiente virtual:
 
-# Instale o pip e as dependências:
+`conda create --name jarvisenv python=3.13`
 
+> Ative o ambiente:
+
+`conda activate jarvisenv`
+
+> Instale o pip e as dependências:
+
+```
 conda install pip
 pip install -r requirements.txt 
+```
 
-# Execute a app:
+> Execute a app:
 
-streamlit run dsa_assistente.py
+`streamlit run JARVIS_AI_Coder.py`
 
-# Exemplos de uso do assistente:
+> Exemplos de uso do assistente:
 
-# Como crio um hello world em Python?
-# Qual a sintaxe de um loop em Python?
-# Como eu uso a função map em Python? Me dê um exemplo com lambda.
+- Como crio um hello world em Python?
+- Qual a sintaxe de um loop em Python?
+- Como eu uso a função map em Python? Me dê um exemplo com lambda.
 
-# Use os comandos abaixo para desativar o ambiente virtual e remover o ambiente (opcional):
+> Use os comandos abaixo para desativar o ambiente virtual e remover o ambiente (opcional):
 
+```
 conda deactivate
-conda remove --name dsaec1 --all
+conda remove --name jarvisenv --all
+```
 
+---
 
+## Usando o `Dockerfile`
 
+1. `docker build -t jarvis-app .`
+
+2. `docker run -d -p 8080:8080 jarvis-app`
