@@ -2,8 +2,12 @@
 
 ## Index
 
-1. [Estudo de Caso 1 - DSA AI Coder - Criando Seu Assistente de Programação Python, em Python](#estudo-de-caso-1---dsa-ai-coder---criando-seu-assistente-de-programação-python-em-python)
+> EXECUTANDO LOCALMENTE:
+1. [Estudo de Caso Python](#estudo-de-caso-1---dsa-ai-coder---criando-seu-assistente-de-programação-python-em-python)
+
+> EXECUTANDO EM SERVIDOR:
 2. [Usando o `Dockerfile`](#usando-o-dockerfile)
+3. [Encaminhanmento de Portas com `Ngrok` - ( Port Forwarding )](#encaminhanmento-de-portas-com-ngrok---port-forwarding)
 
 ## Estudo de Caso 1 - DSA AI Coder - Criando Seu Assistente de Programação Python, em Python
 
@@ -41,8 +45,65 @@ conda remove --name jarvisenv --all
 
 ---
 
-## Usando o `Dockerfile`
+## App Streamlit sendo servido usando imagem `docker`
+
+> Build da imagem no: `Dockerfile`
 
 1. `docker build -t jarvis-app .`
 
 2. `docker run -d -p 8080:8080 jarvis-app`
+
+## Encaminhanmento de Portas com `Ngrok` - Port Forwarding
+
+> Congfiguração e uso do ngrok para encaminhamento de portas:
+
+1. Instalação na máquina linux:
+```bash
+curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null   && echo "deb https://ngrok-agent.s3.amazonaws.com bookworm main"   | sudo tee /etc/apt/sources.list.d/ngrok.list   && sudo apt update   && sudo apt install ngrok
+```
+
+2. Configuração do Authentication Token:
+
+```bash
+ngrok config add-authtoken <your-token-from-ngrok>
+```
+
+- Exemplo:
+
+```bash
+ngrok config add-authtoken abcd123456789
+```
+
+3. Ativação:
+
+```bash
+ngok http <port>
+```
+
+- Exemplo:
+
+```bash
+ngok http 80
+```
+
+4. Adicionando Script para executar o ngrok no `~/.bashrc`:
+
+```bash
+echo <"~/nome_script.sh"> >> ~/.bashrc
+```
+
+- Exemplo
+
+```bash
+echo "~/start-ngrok.sh" >> ~/.bashrc
+```
+
+> local do script:
+
+- [Bash Script do ngrok](./start-ngrok.sh)
+
+5. Visualizando o link gerado pelo ngrok e os logs:
+
+```bash
+cat ~/ngrok.log
+```
