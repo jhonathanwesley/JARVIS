@@ -2,7 +2,8 @@
 
 ## Index
 
-[Estudo de Caso 1 - DSA AI Coder - Criando Seu Assistente de Programação Python, em Python](#)
+1. [Estudo de Caso 1 - DSA AI Coder - Criando Seu Assistente de Programação Python, em Python](#estudo-de-caso-1---dsa-ai-coder---criando-seu-assistente-de-programação-python-em-python)
+2. [Usando o `Dockerfile`](#usando-o-dockerfile)
 
 ## Estudo de Caso 1 - DSA AI Coder - Criando Seu Assistente de Programação Python, em Python
 
